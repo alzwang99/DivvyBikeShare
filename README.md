@@ -185,11 +185,12 @@ right_95_CONF = round(mean_ride + qt(0.975, df = users-1)*st_de/sqrt(users), 2)
 
 Here is the output
 
-![Screen Shot 2023-03-10 at 12.07.46 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ea116954-a186-4557-a8b9-d33d5cc5ad48/Screen_Shot_2023-03-10_at_12.07.46_PM.png)
+<img width="813" alt="Results1" src="https://user-images.githubusercontent.com/127548630/224418652-694c3595-601e-430f-8818-da3cda704a9e.png">
 
 I then created a regular dataset called data_2022 because it contains more columns such as month, day, and time
 
-```r
+```
+
 ## Data organizes based on month, day, time, rideable_type
 ## Returns a mean, median, and # of users.
 data_2022 = annual_2022_v2 %>%
@@ -202,7 +203,7 @@ users = as.numeric(n()))
 
 Here is the sample output
 
-![Screen Shot 2023-03-10 at 12.10.11 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/89a41182-6cf7-454c-b514-4c4a60a48020/Screen_Shot_2023-03-10_at_12.10.11_PM.png)
+<img width="696" alt="Results2" src="https://user-images.githubusercontent.com/127548630/224420915-1ab1c675-ed2c-41d0-afdd-f4807eb29856.png">
 
 I then created the rest of the datasets that would be used for the graphs
 
@@ -289,7 +290,8 @@ labs(y= "Users", x = "Bike Type") + ggtitle("# of Users") +
 stat_summary(geom = "bar", fun = "sum", position = "dodge")
 ```
 
-![Screen Shot 2023-03-10 at 12.26.22 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/26ae9708-f4d3-482b-8421-1aafc1536876/Screen_Shot_2023-03-10_at_12.26.22_PM.png)
+<img width="744" alt="Bar1" src="https://user-images.githubusercontent.com/127548630/224421089-08efd082-ec78-4d20-b665-38994a2ae63d.png">
+
 
 Where there are **1,594,234 casual riders or 36% of observed users.**
 
@@ -318,13 +320,16 @@ stat_summary(geom = "bar", fun = "sum", position = "dodge")
 
 ### **During the Week**
 
-![Screen Shot 2023-03-10 at 12.32.26 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/44d91bc5-a3fc-4b6b-99e5-13d5873a1bca/Screen_Shot_2023-03-10_at_12.32.26_PM.png)
+<img width="745" alt="Bar2" src="https://user-images.githubusercontent.com/127548630/224421132-85e6ab82-5975-4708-95cf-1aedb3825867.png">
+
 
 From here most casual riders ride during the afternoon and evening, especially on the weekends. 
 
 ### During the Month
 
-![Screen Shot 2023-03-10 at 12.34.13 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/17d5b957-41fd-4dca-be16-fde5ee9be9be/Screen_Shot_2023-03-10_at_12.34.13_PM.png)
+
+<img width="1266" alt="Bar3" src="https://user-images.githubusercontent.com/127548630/224421147-3b12361f-ecf5-46ef-a8fc-42713443ec9e.png">
+
 
 Most casual riders ride between **May and September,** but dwindles from **October to April**.
 
@@ -345,7 +350,8 @@ labs(y= "Time (in mins)", x = "Day") +
 stat_summary(geom = "bar", fun = "sum", position = "dodge")
 ```
 
-![Screen Shot 2023-03-10 at 12.51.49 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/03086386-c0d0-42e1-8c11-7404f73eff56/Screen_Shot_2023-03-10_at_12.51.49_PM.png)
+<img width="768" alt="Bar4" src="https://user-images.githubusercontent.com/127548630/224421188-efaed58e-4a77-4da9-ad35-579c5106ea2a.png">
+
 
 It is seen that during the weekdays, Member typically have more total riding time vs casuals meanwhile Casual riders ride a lot more than members during the weekends.
 
@@ -358,7 +364,8 @@ labs(y= "Time (in mins)", x = "Day") + facet_wrap(~day_of_week) +
 ggtitle("Average Ride Length Per Day")
 ```
 
-![Screen Shot 2023-03-10 at 12.54.38 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/75c90827-b58e-4b73-9719-f43d1aef3c01/Screen_Shot_2023-03-10_at_12.54.38_PM.png)
+<img width="768" alt="Bar5" src="https://user-images.githubusercontent.com/127548630/224421199-f377a563-30c1-481a-8b33-6d0912870b25.png">
+
 
 Looking at the average, however, we do see that overall, casual riders ride alot longer than members and that could be due to the usage of the bike. Many members could be using the bikes to go to work, thus has a much shorter average time vs casual riders.
 
@@ -374,7 +381,8 @@ ggtitle("Total Ride Length Per Month") +
 stat_summary(geom = "bar", fun = "sum", position = "dodge")
 ```
 
-![Screen Shot 2023-03-10 at 12.57.06 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/35dbbba5-98e2-415d-bff5-79c443cdcb28/Screen_Shot_2023-03-10_at_12.57.06_PM.png)
+<img width="1230" alt="Bar6" src="https://user-images.githubusercontent.com/127548630/224421213-721c6fd1-e3bc-46b9-a0b8-d4f6382d9085.png">
+
 
 While on an everyday basis, casual riders have less total riding time, they dominate it across months as they easily surpass members in the popular months (May, June, July, and August)
 
@@ -387,7 +395,8 @@ labs(y= "Time (in mins)", x = "Day") + facet_wrap(~month_of_day) +
 ggtitle("Average Ride Length Per Month")
 ```
 
-![Screen Shot 2023-03-10 at 12.59.33 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f9c0dba9-ef5a-4d24-ba5f-e55853fda582/Screen_Shot_2023-03-10_at_12.59.33_PM.png)
+<img width="1140" alt="Bar7" src="https://user-images.githubusercontent.com/127548630/224421238-97af7efd-2d0e-4bf4-baa7-65099c02857e.png">
+
 
 Similar to its day counterpart, the Average Ride Length for Casual Riders is much higher compared to members. Almost twice as much every month.
 
@@ -405,7 +414,7 @@ ggtitle("# of Users over 45 mins of Ride Type") +
 stat_summary(geom = "bar", fun = "sum", position = "dodge")
 ```
 
-![Screen Shot 2023-03-10 at 1.55.26 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/54d58aba-8d72-4934-bac4-649218db01c7/Screen_Shot_2023-03-10_at_1.55.26_PM.png)
+<img width="649" alt="Bar8" src="https://user-images.githubusercontent.com/127548630/224421259-d99ed43e-fbce-404f-9e90-93c9aa59326e.png">
 
 As observed, there are much more casual riders riding over 45 minutes compared to members.
 
@@ -421,7 +430,8 @@ stat_summary(geom = "bar", fun = "sum", position = "dodge")
 
 However, when I checked the 30 minutes and under. The amount of casual users is much greater as it could be due to the advantage of getting the first 30 minutes for free.
 
-![Screen Shot 2023-03-10 at 1.56.37 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3f5b4a73-1f5d-4d66-add7-cb0fc3b79d84/Screen_Shot_2023-03-10_at_1.56.37_PM.png)
+<img width="648" alt="Bar9" src="https://user-images.githubusercontent.com/127548630/224421310-87dabf9e-6db6-4e9d-9f6e-3ce771154d40.png">
+
 
 ### During the Month
 
@@ -436,7 +446,8 @@ labs(y= "Users", x = "Ride Type") +
 ggtitle("# of Users over 45 mins of Ride Type Per Month")
 ```
 
-![Screen Shot 2023-03-10 at 1.15.24 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8fee114c-e575-4f33-a2b7-aa358e0ffde1/Screen_Shot_2023-03-10_at_1.15.24_PM.png)
+<img width="649" alt="Bar10" src="https://user-images.githubusercontent.com/127548630/224421328-7ab2b00f-971b-48c4-907d-54fd186161e6.png">
+
 
 This turned out to be correct as it occurs similar to a bell curve, placing heavy influence onto the months occurring during the summer.
 
@@ -446,7 +457,8 @@ The last thing I want to test is to see where do casual riders frequent when rid
 
 Thus I went over to excel to find out which Location is used throughout the year and where it has the most users.
 
-![Screen Shot 2023-03-10 at 1.18.28 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/16a31156-de19-47ed-8f62-2db5882ebf05/Screen_Shot_2023-03-10_at_1.18.28_PM.png)
+<img width="512" alt="Excel1" src="https://user-images.githubusercontent.com/127548630/224421374-ef5a326f-8c5c-4408-ad7b-5d826a4624ec.png">
+
 
 So far there are 4 stations that are fairly consistent in having people ride from that location, where Streeter Drive & Grand Avenue has an exceptionally high amount of users. 
 
@@ -454,7 +466,8 @@ So far there are 4 stations that are fairly consistent in having people ride fro
 
 I then went over to Google Maps to pinpoint where these locations are 
 
-![All Casual.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b189ca32-882e-4cc3-9624-63f9946a6c7c/All_Casual.png)
+<img width="532" alt="Map1" src="https://user-images.githubusercontent.com/127548630/224421394-5bafec89-7476-46a9-8ec1-07e60ee53693.png">
+
 
 ************************************************************************************************************************************Locations in Black are intersected and other colors represent singular locations from certain months.************************************************************************************************************************************
 
@@ -466,7 +479,7 @@ So when we look into the most popular months vs least popular months, it is cons
 
 This includes June, July August, September
 
-![Screen Shot 2023-03-10 at 12.11.24 AM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/71e22f91-cb0f-4260-b179-593c6f8d6e22/Screen_Shot_2023-03-10_at_12.11.24_AM.png)
+<img width="532" alt="Map2" src="https://user-images.githubusercontent.com/127548630/224421412-a1069f9a-edb9-4de9-8791-9d9e1daf166c.png">
 
 These focus more on the concentrated top-right area.
 
@@ -474,7 +487,7 @@ These focus more on the concentrated top-right area.
 
 This includes January 2023, February, March, December
 
-![Screen Shot 2023-03-10 at 12.08.12 AM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7a3758ab-261c-41b1-a849-297c0f99e219/Screen_Shot_2023-03-10_at_12.08.12_AM.png)
+<img width="534" alt="Map3" src="https://user-images.githubusercontent.com/127548630/224421452-b7d3b608-3075-4c2f-b46e-f67a9f8e025a.png">
 
 Less concentrated and focused more on the outliers in the South
 
