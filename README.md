@@ -40,6 +40,10 @@ Divvy has set a clear goal: Design marketing strategies aimed at converting casu
     1. The stations that casual riders go to throughout the year are Shedd Aquarium, Streeter Drive & Grand Avenue, and Millenium Park
         1. Note: On the most popular months, it is more concentrated in the North East side of Chicago, meanwhile on the least popular months, it is more spread-out across the strip of Chicago.
 
+# Resources
+Collected Data from https://divvy-tripdata.s3.amazonaws.com/index.html
+Used as an initial reference https://rstudio-pubs-static.s3.amazonaws.com/870536_5dcad88a8ae74c2b8f95a797ff626113.html
+
 # Coding
 
 ### Set-up
